@@ -352,6 +352,7 @@ alias testgitlab='ssh -T git@gitlab.ravenpack.com'
 # Exports Ravenpack #
 #####################
 export RP_REPOS=$HOME/git
+#export RP_REPOS=/mnt/ram/git
 export PATH=$PATH:/opt/acl10.1-smp.64
 export ACL_LOCALE=C.latin1
 export NLS_LANG=AMERICAN.WE8ISO8859P1
