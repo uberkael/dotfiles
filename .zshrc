@@ -365,3 +365,56 @@ export IFILE=$TNS_ADMIN/tnsnames.ora
 PATH=.:$HOME/bin:$HOME/.local/bin:/usr/local/bin:/opt/X11/bin:/usr/local/sbin:$PATH
 
 [[ $TERM == "tramp" ]] && unsetopt zle && PS1='$ ' && return
+
+##########
+# Zstyle #
+##########
+# Colores de ls en autocompletado de archivos
+# disable-fzf-tab
+# zstyle ':completion:*' list-colors '=(#b)(--[^ ])(*)=38;5;220;1=38;5;216'
+# zstyle ':completion:*' file-list true
+# zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# zstyle ':completion:*:messages' format ' %F{purple} -- %d --%f'
+# zstyle ':completion:*:warnings' format ' %F{red}-- no matches found --%f'
+
+#######
+# fzf #
+#######
+# export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+export FZF_DEFAULT_OPTS='--layout=reverse --border'
+
+###########
+# fzf tab #
+###########
+# disable sort when completing `git checkout`
+zstyle ':completion:*:git-checkout:*' sort false
+# set descriptions format to enable group support
+zstyle ':completion:*:descriptions' format '[%d]'
+# set list-colors to enable filename colorizing
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# switch group using `,` and `.`
+zstyle ':fzf-tab:*' switch-group ',' '.'
+# Tmux buffer
+# zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+# Preview
+# variables
+zstyle ':fzf-tab:complete:(-command-|-parameter-|-brace-parameter-|export|unset|expand):*' \
+	fzf-preview 'echo ${(P)word}'
+# preview directory's content with exa when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+# zstyle ':fzf-tab:complete:cd:*' popup-pad 30 0
+# SystemD status
+zstyle ':fzf-tab:complete:systemctl-*:*' fzf-preview 'SYSTEMD_COLORS=1 systemctl status $word'
+# give a preview of commandline arguments when completing `kill`
+zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
+zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-preview \
+  '[[ $group == "[process ID]" ]] && ps --pid=$word -o cmd --no-headers -w -w'
+zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-flags --preview-window=down:3:wrap
+
+# Fast trigger
+# Acepta el path inmediatamente
+# zstyle ':fzf-tab:*' continuous-trigger '/'
+
+# Format
+zstyle ':fzf-tab:*' prefix ''
+
