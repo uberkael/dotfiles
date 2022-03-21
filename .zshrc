@@ -41,6 +41,13 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
+####################
+# Install programs #
+####################
+for id ( ogham/exa sharkdp/{fd,bat} ) {
+     zinit from"gh-r" as"program" for @$id
+}
+
 # autoload compinit
 # compinit
 zicompinit
@@ -345,6 +352,7 @@ alias ssh='ssh -Y -X'
 alias suroot='sudo -E -s'
 alias testgitlab='ssh -T git@gitlab.ravenpack.com'
 alias tmux='tmux a || tmux'
+alias screen='screen -x || screen'
 alias wea='curl "wttr.in/Sevilla?format=3"'
 alias weareport='curl "v2d.wttr.in/Sevilla"'
 alias weather='curl wttr.in/Sevilla'
