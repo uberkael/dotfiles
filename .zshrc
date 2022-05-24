@@ -356,6 +356,8 @@ alias screen='screen -x || screen'
 alias wea='curl "wttr.in/Sevilla?format=3"'
 alias weareport='curl "v2d.wttr.in/Sevilla"'
 alias weather='curl wttr.in/Sevilla'
+alias ps='grc ps'
+alias ping='grc ping'
 
 #####################
 # Exports Ravenpack #
