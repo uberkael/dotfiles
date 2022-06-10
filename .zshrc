@@ -1,3 +1,7 @@
+# Start profiling zshrc
+# zmodload zsh/zprof
+
+
 # History
 setopt EXTENDED_HISTORY
 setopt HIST_EXPIRE_DUPS_FIRST
@@ -434,3 +438,9 @@ zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f
 # Format
 zstyle ':fzf-tab:*' prefix ''
 
+# Alternativa
+zbenchmark () {
+	for i in $(seq 1 10); do time zsh -i -c exit; done
+}
+# Stop profiling zshrc - bottom of .zshrc
+# zprof
