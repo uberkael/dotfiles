@@ -63,10 +63,19 @@ zinit light-mode for \
 ####################
 # Install programs #
 ####################
-for id ( ogham/exa sharkdp/{fd,bat} ) {
-     zinit from"gh-r" as"program" for @$id
-}
-
+# for id ( ogham/exa sharkdp/{fd,bat} ) {
+# 	 zinit from"gh-r" as"program" for @$id
+# }
+# A cat clone with syntax highlighting and Git integration.
+zinit ice from"gh-r" as"program" mv"bat-*/bat -> bat"; zinit light sharkdp/bat
+# A viewer for git and diff output
+zinit ice from"gh-r" as"program" mv"delta-*/delta -> delta"; zinit light dandavison/delta
+# A more intuitive version of du written in rust.
+zinit ice from"gh-r" as"program" mv"dust-*/dust -> dust"; zinit light bootandy/dust
+# A simple, fast and user-friendly alternative to find
+zinit ice from"gh-r" as"program" mv"fd-*/fd -> fd"; zinit light sharkdp/fd
+# An extremely fast alternative to grep that respects your gitignore
+zinit ice from"gh-r" as"program" mv"ripgrep-*/rg -> rg"; zinit light BurntSushi/ripgrep
 # autoload compinit
 # compinit
 zicompinit
