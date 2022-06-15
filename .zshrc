@@ -264,11 +264,11 @@ if [ $TERM = "xterm-256color" ]; then
 	zle -N bracketed-paste bracketed-paste-magic
 	# Now the fix, setup these two hooks:
 	pasteinit() {
-	OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
-	zle -N self-insert url-quote-magic
+		OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
+		zle -N self-insert url-quote-magic
 	}
 	pastefinish() {
-	zle -N self-insert $OLD_SELF_INSERT
+		zle -N self-insert $OLD_SELF_INSERT
 	}
 	zstyle :bracketed-paste-magic paste-init pasteinit
 	zstyle :bracketed-paste-magic paste-finish pastefinish
@@ -451,6 +451,17 @@ alias weareport='curl "v2d.wttr.in/Sevilla"'
 alias weather='curl wttr.in/Sevilla'
 alias ps='grc ps'
 alias ping='grc ping'
+alias myip='curl http://ipecho.net/plain; echo'
+alias distro='cat /etc/*-release'
+
+
+#############
+# Functions #
+#############
+# Take crea y entra a un directorio
+take() {
+	mkdir -p "$1" && cd "$1"
+}
 
 #####################
 # Exports Ravenpack #
@@ -479,6 +490,9 @@ PATH=.:$HOME/bin:$HOME/.local/bin:/usr/local/bin:/opt/X11/bin:/usr/local/sbin:$P
 # zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # zstyle ':completion:*:messages' format ' %F{purple} -- %d --%f'
 # zstyle ':completion:*:warnings' format ' %F{red}-- no matches found --%f'
+# Partial pattern matching https://unix.stackexchange.com/q/168741/354135
+# zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
+# zstyle ':completion:*' matcher-list 'r:|?=**'
 
 #######
 # fzf #
