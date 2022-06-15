@@ -146,7 +146,11 @@ zinit ice as"command" make"\!PREFIX=$ZPFX install" \
 	pick"$ZPFX/bin/fzy*"
 zinit load jhawthorn/fzy
 
-zinit load softmoth/zsh-vim-mode
+# Teclas especiales alt flechas home etc
+# bindkey -v
+# zinit load softmoth/zsh-vim-mode
+
+
 
 # Fast Syntax Highlighting
 zinit load zdharma-continuum/fast-syntax-highlighting
