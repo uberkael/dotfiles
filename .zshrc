@@ -486,6 +486,39 @@ zstyle ':fzf-tab:*' prefix ''
 # eval "$(pyenv init --path)"
 # eval "$(pyenv init -)"
 # eval "$(pyenv virtualenv-init -)"
+
+###############
+# Go To Every #
+###############
+## use rg to get file list
+export FZF_DEFAULT_COMMAND='rg --files --hidden'
+
+## file open (function1)
+__my-fo() (
+  setopt localoptions pipefail no_aliases 2> /dev/null
+  local file=$(eval "${FZF_DEFAULT_COMMAND}" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS --preview 'bat --color=always --line-range :500 {}'" fzf -m "$@" | while read item; do
+	echo -n "${(q)item}"
+  done)
+  local ret=$?
+  if [[ -n $file ]]; then
+	echo "$EDITOR"
+	# $EDITOR $file
+	echo "$file"
+  fi
+  return $ret
+)
+
+## define zsh widget(function2)
+__my-fo-widget(){
+  __my-fo
+  local ret=$?
+  zle reset-prompt
+  return $ret
+}
+
+zle -N __my-fo-widget
+bindkey ^p __my-fo-widget
+
 # Alternativa
 zbenchmark () {
 	for i in $(seq 1 10); do time zsh -i -c exit; done
