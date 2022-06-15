@@ -168,8 +168,47 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
+# Move
+bindkey '^[[1;5C' forward-word
+bindkey '^[[1;5D' backward-word
+
+bindkey '^[[1;3C' emacs-forward-word
+bindkey '^[[1;3D' emacs-backward-word
+
+# Home
+bindkey "\E[1~" beginning-of-line
+bindkey "\E[4~" end-of-line
+
+bindkey "\E[H" beginning-of-line
+bindkey "\E[F" end-of-line
+bindkey "\E[3~" delete-char
+
+# for rxvt
+bindkey "\e[7~" beginning-of-line # Home
+bindkey "\e[8~" end-of-line # End
+# for non RH/Debian xterm, can't hurt for RH/Debian xterm
+bindkey "\eOH" beginning-of-line
+bindkey "\eOF" end-of-line
+# for freebsd console
+bindkey "\e[H" beginning-of-line
+bindkey "\e[F" end-of-line
+
+# Clear
+bindkey '^[[3~' kill-whole-line
+
+# Delete
+bindkey '^H' backward-kill-word # Ctrl
+
 # zinit light zsh-users/zsh-autosuggestions
 zinit load zsh-users/zsh-autosuggestions
+
+# alias reminders
+zinit light "djui/alias-tips"
+
+# Pyenv
+# zinit pack for pyenv
+# zinit light zdharma-continuum/zinit-annex-bin-gem-node
+# zinit pack"bgn" for pyenv
 
 # Url quotes magic
 if [ $TERM = "xterm-256color" ]; then
@@ -243,14 +282,16 @@ case "$OSTYPE" in
 		}
 		alias systemctl='sudo systemctl'
 	fi
-	#########
-	# PyEnv #
-	#########
-	if command -v pyenv 1>/dev/null 2>&1; then
-		export PYENV_ROOT="$HOME/.pyenv"
+	# #########
+	# # PyEnv #
+	# #########
+	export PYENV_ROOT="$HOME/.pyenv"
+	if [ -x "$(command -v pyenv)" ];
+	then
 		export PATH="$PYENV_ROOT/bin:$PATH"
 		eval "$(pyenv init --path)"
 		eval "$(pyenv init -)"
+		eval "$(pyenv virtualenv-init -)"
 	fi
 	;;
 	darwin*)
@@ -290,14 +331,16 @@ case "$OSTYPE" in
 	alias ainfo='brew info'
 	alias aup='brew update -v;brew upgrade -v;brew cu -vfacy'
 	alias aclean='brew cleanup'
-	#########
-	# PyEnv #
-	#########
-	if command -v pyenv 1>/dev/null 2>&1; then
-		export PYENV_ROOT="$HOME/.pyenv"
+	# #########
+	# # PyEnv #
+	# #########
+	export PYENV_ROOT="$HOME/.pyenv"
+	if [ -x "$(command -v pyenv)" ];
+	then
 		export PATH="$PYENV_ROOT/bin:$PATH"
 		eval "$(pyenv init --path)"
 		eval "$(pyenv init -)"
+		eval "$(pyenv virtualenv-init -)"
 	fi
 	;;
 	cygwin*)
@@ -438,6 +481,11 @@ zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f
 # Format
 zstyle ':fzf-tab:*' prefix ''
 
+# export PYENV_ROOT="$HOME/.pyenv"
+# export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init --path)"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 # Alternativa
 zbenchmark () {
 	for i in $(seq 1 10); do time zsh -i -c exit; done
