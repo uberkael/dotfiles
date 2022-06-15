@@ -1,8 +1,25 @@
 # Start profiling zshrc
 # zmodload zsh/zprof
 
+################
+# ZSH Settings #
+################
+# No necesita cd
+setopt autocd
+# enable parameter expansion, command substituion, and arithmetic expansion in prompts
+setopt PROMPT_SUBST
+# Autocorrect
+# setopt correct
+# don't beep on an ambiguous completion
+setopt no_list_beep
+# Permite archivos .
+setopt globdots
+# Permite comentarios en la linea
+setopt interactivecomments
 
 # History
+HISTSIZE=100000000
+SAVEHIST=100000000
 setopt EXTENDED_HISTORY
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_IGNORE_DUPS
@@ -11,8 +28,6 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 HISTFILE=~/.zsh_history
-HISTSIZE=1000000
-SAVEHIST=100000
 setopt SHARE_HISTORY
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
