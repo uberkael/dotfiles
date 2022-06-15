@@ -76,9 +76,20 @@ zinit ice from"gh-r" as"program" mv"dust-*/dust -> dust"; zinit light bootandy/d
 zinit ice from"gh-r" as"program" mv"fd-*/fd -> fd"; zinit light sharkdp/fd
 # An extremely fast alternative to grep that respects your gitignore
 zinit ice from"gh-r" as"program" mv"ripgrep-*/rg -> rg"; zinit light BurntSushi/ripgrep
+############
+# Compinit #
+############
 # autoload compinit
 # compinit
-zicompinit
+
+# Solo actualiza cada 24 horas
+# autoload -Uz compinit
+# for dump in ~/.zcompdump(N.mh+24); do
+#   compinit
+# done
+# compinit -C
+
+zicompinit # equals to autoload compinit; compinit
 
 ##########
 # THEMES #
