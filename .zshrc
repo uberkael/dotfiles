@@ -189,6 +189,9 @@ zinit wait lucid for \
 	# OMZP::zsh-completions \
 	# OMZP::fast-syntax-highlighting \
 
+# Buscar teclas
+# showkey -a
+
 # Buscar Historial
 zinit light zsh-users/zsh-history-substring-search
 bindkey "$terminfo[kcuu1]" history-substring-search-up
