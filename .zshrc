@@ -179,8 +179,12 @@ zinit wait lucid for \
 	OMZP::git \
 	OMZP::colored-man-pages \
 	OMZP::sudo \
+	OMZP::pip \
+	OMZP::systemd \
+	OMZP::fasd \
 	OMZP::command-not-found
 	# OMZP::fzf
+	# OMZP::screen \
 	# OMZP::zsh-syntax-highlighting \
 	# OMZP::zsh-completions \
 	# OMZP::fast-syntax-highlighting \
