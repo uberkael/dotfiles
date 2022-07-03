@@ -206,6 +206,8 @@ zinit wait lucid for \
 
 # Buscar teclas
 # showkey -a
+# Lista de comandos
+# zle -al
 
 # Buscar Historial
 zinit light zsh-users/zsh-history-substring-search
@@ -215,11 +217,16 @@ bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
 # Move
+# Ctrl
 bindkey '^[[1;5C' forward-word
 bindkey '^[[1;5D' backward-word
-
+# Alt
 bindkey '^[[1;3C' emacs-forward-word
 bindkey '^[[1;3D' emacs-backward-word
+bindkey '^[[1;4C' emacs-forward-word
+bindkey '^[^[[C' emacs-forward-word
+bindkey '^[[1;4D' emacs-backward-word
+bindkey '^[^[[D' emacs-backward-word
 
 # Home
 bindkey "\E[1~" beginning-of-line
@@ -240,10 +247,11 @@ bindkey "\e[H" beginning-of-line
 bindkey "\e[F" end-of-line
 
 # Clear
-bindkey '^[[3~' kill-whole-line
+bindkey '^[[3;5~' kill-whole-line
 
 # Delete
 bindkey '^H' backward-kill-word # Ctrl
+bindkey '^[[3;3~' kill-line
 
 # zinit light zsh-users/zsh-autosuggestions
 zinit load zsh-users/zsh-autosuggestions
