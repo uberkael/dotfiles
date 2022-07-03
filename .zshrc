@@ -116,9 +116,9 @@ zinit light romkatv/powerlevel10k
 # PLUGINS #
 ###########
 # Load  zpm-zsh/dircolors-material
-zinit pack for dircolors-material
+[[ "$OSTYPE" != 'cygwin'* ]] && zinit pack for dircolors-material
 # Load trapd00r/LS_COLORS
-zinit pack for ls_colors
+[[ "$OSTYPE" != 'cygwin'* ]] && zinit pack for ls_colors
 
 # zinit light trapd00r/LS_COLORS
 
@@ -134,7 +134,7 @@ zinit pack for ls_colors
 # Fzf
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # zinit pack for fzf
-zinit pack"bgn" for fzf
+[[ "$OSTYPE" != 'cygwin'* ]] && zinit pack"bgn" for fzf
 
 # zsh-fzf-history-search
 zinit ice lucid wait'0'
