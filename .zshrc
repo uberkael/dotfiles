@@ -247,6 +247,31 @@ bindkey '^H' backward-kill-word # Ctrl
 
 # zinit light zsh-users/zsh-autosuggestions
 zinit load zsh-users/zsh-autosuggestions
+# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
+
+# More completions
+# zinit light zsh-users/zsh-completions
+zinit ice wait'0' lucid; zinit light sainnhe/zsh-completions
+
+# Autocomplete lista mientras escribes
+# zinit light marlonrichert/zsh-autocomplete
+
+# Fish man
+# load module for list-style selection
+# zmodload zsh/complist
+# setopt menucomplete
+# zstyle ':completion:*' menu select=0 search
+# zstyle ':completion:*:manuals'    separate-sections true
+# zstyle ':completion:*:manuals.*'  insert-sections   true
+# zstyle ':completion:*:man:*'      menu yes select
+
+# Genera autocompletado con manpages
+# gencomp fzf --man
+# gencomp bat
+# zinit light Aloxaf/gencomp
+
+# zinit light RobSis/zsh-completion-generator
+# zstyle :plugin:zsh-completion-generator programs ggrep tr cat pyenv
 
 # alias reminders
 zinit light "djui/alias-tips"
