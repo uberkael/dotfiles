@@ -322,6 +322,9 @@ case "$OSTYPE" in
 	alias ip='grc --colour=auto ip'
 	alias sbcl='rlwrap sbcl'
 	alias alisp='rlwrap alisp'
+	alias ccl='rlwrap ccl'
+	alias clasp='rlwrap clasp'
+	alias open="xdg-open"
 	if [ -x "$(command -v apt)" ];
 	then
 		alias aconf='sudo dpkg-reconfigure'
@@ -387,6 +390,10 @@ case "$OSTYPE" in
 	# export LSCOLORS=gxBxhxDxfxhxhxhxhxcxc
 	# export LSCOLORS="GxFxCxDxBxegedabagaced"
 	# export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
+	alias sbcl='rlwrap sbcl'
+	alias alisp='rlwrap alisp'
+	alias ccl='rlwrap ccl'
+	alias clasp='rlwrap clasp'
 	alias imgcat=~/.iterm2/imgcat
 	alias imgls=~/.iterm2/imgls
 	alias it2attention=~/.iterm2/it2attention
