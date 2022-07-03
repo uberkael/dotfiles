@@ -331,11 +331,13 @@ case "$OSTYPE" in
 		alias asea='apt search'
 		alias alist='apt list --installed'
 		alias ainst='sudo apt install -y'
-		alias aremo='sudo apt remove -y'
+		alias arm='sudo apt remove -y'
 		alias ainfo='apt info'
 		alias aup='sudo apt update -y; sudo apt upgrade -y'
 		alias aclean='sudo apt autoremove -y; sudo apt clean -y'
 		alias agui='sudo -E synaptic'
+		alias afresh='sudo apt update -y'
+		alias amirror='netselect-apt -n'
 		# alias apt='sudo apt'
 	fi
 	if [ -x "$(command -v pacman)" ];
@@ -343,11 +345,13 @@ case "$OSTYPE" in
 		alias asea='pacman -Ss'
 		alias alist='pacman -Q'
 		alias ainst='sudo pacman -S'
-		alias aremo='sudo pacman -Rs '
+		alias arm='sudo pacman -Rs '
 		alias ainfo='pacman -Si'
 		alias ainfo='pacman -Qi'
 		alias aup='sudo pacman -Syu'
 		alias aclean='sudo pacman -Qdtq | sudo pacman -Rs -; sudo pacman -Sc'
+		alias afresh='sudo pacman -Syy'
+		alias amirror='sudo pacman-mirrors -f'
 		# TODO
 		alias apack='pacman -Ql'
 		alias agui='sudo -E /usr/bin/pamac-manager'
@@ -374,6 +378,7 @@ case "$OSTYPE" in
 		eval "$(pyenv init --path)"
 		eval "$(pyenv init -)"
 		eval "$(pyenv virtualenv-init -)"
+		source /home/kael/.zinit/plugins/pyenv/completions/pyenv.zsh
 	fi
 	;;
 	darwin*)
@@ -411,8 +416,8 @@ case "$OSTYPE" in
 	alias asea='brew search'
 	alias alist='brew list'
 	alias ainst='brew install'
-	alias aremo='brew remove'
-	alias acinst='brew cask install'
+	alias arm='brew remove'
+	alias acinst='brew install --cask'
 	alias acremove='brew cask remove'
 	alias ainfo='brew info'
 	alias aup='brew update -v;brew upgrade -v;brew cu -vfacy'
@@ -440,7 +445,7 @@ case "$OSTYPE" in
 	alias asea='choco list'
 	alias alist='choco list -l'
 	alias ainst='cinst'
-	alias aremo='choco uninstall'
+	alias arm='choco uninstall'
 	alias ainfo='choco info'
 	alias aup='cup'
 	alias aclean='/cygdrive/c/ProgramData/chocolatey/bin/choco-cleaner.bat'
