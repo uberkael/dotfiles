@@ -250,12 +250,23 @@ bindkey "\eOF" end-of-line
 bindkey "\e[H" beginning-of-line
 bindkey "\e[F" end-of-line
 
-# Clear
+# Clear line (ctrl+del)
 bindkey '^[[3;5~' kill-whole-line
+# Clear screen (ctrl+l)
+function clear-scrollback-buffer {
+# some terminal 'e[3J' need to be sent explicitly to clear scrollback
+# clear && printf '\e[3J'
+# In one step
+printf "\ec\e[3J"
+# make sure it works for multiline prompts
+zle && zle .reset-prompt && zle -R
+}
+zle -N clear-scrollback-buffer
+bindkey '^L' clear-scrollback-buffer
 
-# Delete
+# Delete (borrar)
 bindkey '^H' backward-kill-word # Ctrl
-bindkey '^[[3;3~' kill-line
+bindkey '^[[3;3~' kill-line # Alt
 
 # zinit light zsh-users/zsh-autosuggestions
 zinit load zsh-users/zsh-autosuggestions
