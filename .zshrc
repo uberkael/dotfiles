@@ -634,3 +634,23 @@ zbenchmark () {
 }
 # Stop profiling zshrc - bottom of .zshrc
 # zprof
+
+# History duplicates
+h() {
+	if [ -z "$*" ]; then
+		history 1;
+	else history 1 | egrep "$@"; fi;
+}
+# Load .env
+env-load() {
+	# if [ -f .env ]; then
+	#   export $(echo $(cat .env | sed 's/#.*//g'| xargs) | envsubst)
+	# fi
+	# [ ! -f .env ] || export $(grep -v '^#' .env | xargs | envsubst)
+	[ ! -f .env ] || export $(sed 's/#.*//g' .env | xargs | envsubst)
+}
+
+# Docker ips
+docker-ips() {
+	docker inspect --format='{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq)
+}
