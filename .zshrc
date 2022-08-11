@@ -539,7 +539,8 @@ export LD_LIBRARY_PATH=$ORACLE_HOME:/usr/lib/x86_64-linux-gnu
 export TNS_ADMIN=$RP_REPOS/configuration
 export IFILE=$TNS_ADMIN/tnsnames.ora
 
-PATH=.:$HOME/bin:$HOME/.local/bin:/usr/local/bin:/opt/X11/bin:/usr/local/sbin:$PATH
+# PATH=.:$HOME/bin:$HOME/.local/bin:/usr/local/bin:/opt/X11/bin:/usr/local/sbin:$PATH
+PATH=.:$HOME/bin:/usr/local/bin:/opt/X11/bin:/usr/local/sbin:$PATH
 
 [[ $TERM == "tramp" ]] && unsetopt zle && PS1='$ ' && return
 
