@@ -299,10 +299,13 @@ zinit ice wait'0' lucid; zinit light sainnhe/zsh-completions
 # alias reminders
 zinit light "djui/alias-tips"
 
-# Pyenv
+# Pyenv (descomentar y comentar si hay problemas)
 # zinit pack for pyenv
-# zinit light zdharma-continuum/zinit-annex-bin-gem-node
 # zinit pack"bgn" for pyenv
+
+# Poetry
+zinit ice pick'poetry.zsh'
+zinit light sudosubin/zsh-poetry
 
 # Url quotes magic
 if [ $TERM = "xterm-256color" ]; then
