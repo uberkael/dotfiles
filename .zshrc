@@ -54,8 +54,9 @@ autoload -Uz _zinit
 # (this is currently required for annexes)
 zinit light-mode for \
 	zdharma-continuum/z-a-rust \
-	zdharma-continuum/z-a-as-monitor \
 	zdharma-continuum/z-a-patch-dl \
+	zdharma-continuum/zinit-annex-readurl \
+	zdharma-continuum/z-a-as-monitor \
 	zdharma-continuum/z-a-bin-gem-node
 
 ### End of Zinit's installer chunk
@@ -63,6 +64,9 @@ zinit light-mode for \
 ####################
 # Install programs #
 ####################
+# ara usar bgn
+zinit light zdharma-continuum/zinit-annex-bin-gem-node
+# zinit light zdharma-continuum/zinit-annex-readurl
 # for id ( ogham/exa sharkdp/{fd,bat} ) {
 # 	 zinit from"gh-r" as"program" for @$id
 # }
@@ -211,12 +215,12 @@ zinit wait lucid for \
 
 # Buscar Historial
 zinit light zsh-users/zsh-history-substring-search
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
+[[ "$OSTYPE" != 'darwin'* ]] && bindkey "$terminfo[kcuu1]" history-substring-search-up
+[[ "$OSTYPE" != 'darwin'* ]] && bindkey "$terminfo[kcud1]" history-substring-search-down
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
-# Move
+# Move with arrows
 # Ctrl
 bindkey '^[[1;5C' forward-word
 bindkey '^[[1;5D' backward-word
@@ -236,7 +240,7 @@ bindkey "\E[H" beginning-of-line
 bindkey "\E[F" end-of-line
 bindkey "\E[3~" delete-char
 
-# for rxvt
+# for rxvt (Home End)
 bindkey "\e[7~" beginning-of-line # Home
 bindkey "\e[8~" end-of-line # End
 # for non RH/Debian xterm, can't hurt for RH/Debian xterm
