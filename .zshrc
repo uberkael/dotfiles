@@ -361,7 +361,9 @@ case "$OSTYPE" in
 	if [ -x "$(command -v pacman)" ];
 	then
 		alias asea='pacman -Ss'
-		alias alist='pacman -Q'
+		alias alist='pacman -Qqe'
+		alias alistAUR='pacman -Qqem'
+		alias alistVersions='pacman -Q'
 		alias ainst='sudo pacman -S'
 		alias arm='sudo pacman -Rs '
 		alias ainfo='pacman -Si'
@@ -516,6 +518,7 @@ alias ps='grc ps'
 alias ping='grc ping'
 alias myip='curl http://ipecho.net/plain; echo'
 alias distro='cat /etc/*-release'
+alias fd="fd -HI"
 
 
 #############
