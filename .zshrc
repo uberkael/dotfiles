@@ -198,10 +198,10 @@ zinit wait lucid for \
 	OMZP::git \
 	OMZP::colored-man-pages \
 	OMZP::sudo \
-	OMZP::pip \
 	OMZP::systemd \
 	OMZP::fasd \
 	OMZP::command-not-found
+	# OMZP::pip \
 	# OMZP::fzf
 	# OMZP::screen \
 	# OMZP::zsh-syntax-highlighting \
@@ -299,9 +299,9 @@ zinit ice wait'0' lucid; zinit light sainnhe/zsh-completions
 # alias reminders
 zinit light "djui/alias-tips"
 
-# Pyenv (descomentar y comentar si hay problemas)
+# Pyenv (descomentar -solo una-  y comentar si hay problemas)
 # zinit pack for pyenv
-# zinit pack"bgn" for pyenv
+# [[ "$OSTYPE" != 'cygwin'* ]] && zinit pack"bgn" for pyenv
 
 # Poetry
 zinit ice pick'poetry.zsh'
