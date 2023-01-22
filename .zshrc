@@ -80,6 +80,12 @@ zinit ice from"gh-r" as"program" mv"dust-*/dust -> dust"; zinit light bootandy/d
 zinit ice from"gh-r" as"program" mv"fd-*/fd -> fd"; zinit light sharkdp/fd
 # An extremely fast alternative to grep that respects your gitignore
 zinit ice from"gh-r" as"program" mv"ripgrep-*/rg -> rg"; zinit light BurntSushi/ripgrep
+#######
+# ZMV #
+#######
+# Permite hacer rename masivo
+autoload zmv
+
 ############
 # Compinit #
 ############
@@ -543,7 +549,7 @@ export TNS_ADMIN=$RP_REPOS/configuration
 export IFILE=$TNS_ADMIN/tnsnames.ora
 
 # PATH=.:$HOME/bin:$HOME/.local/bin:/usr/local/bin:/opt/X11/bin:/usr/local/sbin:$PATH
-PATH=.:$HOME/bin:/usr/local/bin:/opt/X11/bin:/usr/local/sbin:$PATH
+PATH=.:$HOME/bin:$HOME/.cargo/bin:/usr/local/bin:/opt/X11/bin:/usr/local/sbin:$PATH
 
 [[ $TERM == "tramp" ]] && unsetopt zle && PS1='$ ' && return
 
