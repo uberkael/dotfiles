@@ -625,9 +625,7 @@ PATH=$HOME/bin:$PATH
 PATH=.:$PATH
 [[ $TERM == "tramp" ]] && unsetopt zle && PS1='$ ' && return
 
-##########
-# Zstyle #
-##########
+
 ###########
 # Android #
 ###########
@@ -701,16 +699,13 @@ zstyle ':fzf-tab:*' prefix ''
 # eval "$(pyenv init -)"
 # eval "$(pyenv virtualenv-init -)"
 
-###############
-# Go To Every #
-###############
 #############
 # Functions # REF
 #############
 ## use rg to get file list
 export FZF_DEFAULT_COMMAND='rg --files --hidden'
 
-## file open (function1)
+# file open (function1)
 __my-fo() (
   setopt localoptions pipefail no_aliases 2> /dev/null
   local file=$(eval "${FZF_DEFAULT_COMMAND}" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS --preview 'bat --color=always --line-range :500 {}'" fzf -m "$@" | while read item; do
@@ -725,7 +720,7 @@ __my-fo() (
   return $ret
 )
 
-## define zsh widget(function2)
+# define zsh widget(function2)
 __my-fo-widget(){
   __my-fo
   local ret=$?
