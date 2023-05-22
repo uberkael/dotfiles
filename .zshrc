@@ -255,6 +255,16 @@ zinit light molovo/revolver
 # Hexyl - Editor Hexadecimal
 [[ "$OSTYPE" != 'freebsd'* ]] && zinit ice from"gh-r" as"program" mv"hexyl*/hexyl* -> hexyl" #pick"*/hexyl"
 [[ "$OSTYPE" != 'freebsd'* ]] && zinit light "sharkdp/hexyl"
+# TLDR-Python - TLDR
+zinit ice as"command" mv"tldr.py -> tldr"
+zinit light tldr-pages/tldr-python-client
+
+# TLDR-C - TLDR
+# zinit light tldr-pages/tldr-c-client
+
+# Tealdeer - TLDR
+# https://github.com/tldr-pages/tldr
+# zinit light dbrgn/tealdeer
 ##########
 # THEMES # REF
 ##########
