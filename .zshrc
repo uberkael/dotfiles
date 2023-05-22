@@ -499,6 +499,44 @@ case "$OSTYPE" in
 	alias pyenv='cmd /c "pyenv"'
 	alias python='cmd /c "python"'
 	;;
+	freebsd*)
+
+	# GRCPATH="/usr/local/etc/grc.zsh"
+	# GRCPATHZSH="/usr/local/etc/grc.zsh"
+	# export CLICOLOR=1
+	# export LSCOLORS="ExFxCxDxBxegedabagacad"
+	# # export LSCOLORS=gxBxhxDxfxhxhxhxhxcxc
+	# # export LSCOLORS="GxFxCxDxBxegedabagaced"
+	# # export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
+
+	#alias sbcl='rlwrap sbcl'
+	#alias alisp='rlwrap alisp'
+	#alias ccl='rlwrap ccl'
+	#alias clasp='rlwrap clasp'
+	#alias imgcat=~/.iterm2/imgcat
+	#alias imgls=~/.iterm2/imgls
+	#alias it2attention=~/.iterm2/it2attention
+	#alias it2check=~/.iterm2/it2check
+	#alias it2copy=~/.iterm2/it2copy
+	#alias it2dl=~/.iterm2/it2dl
+	#alias it2getvar=~/.iterm2/it2getvar
+	#alias it2setcolor=~/.iterm2/it2setcolor
+	#alias it2setkeylabel=~/.iterm2/it2setkeylabel
+	#alias it2ul=~/.iterm2/it2ul
+	#alias it2universion=~/.iterm2/it2universion
+	#alias java_home="/usr/libexec/java_home -V"
+	#alias ls='grc --colour=auto ls'
+	#alias ipa='grc --colour=auto ip address'
+	alias asea='sudo pkg search'
+	#alias alist='brew list'
+	alias ainst='sudo pkg install'
+	alias arm='sudo pkg remove'
+	#alias acinst='brew install --cask'
+	#alias acremove='brew cask remove'
+	#alias ainfo='brew info'
+	#alias aup='brew update -v;brew upgrade -v;brew cu -vfacy'
+	#alias aclean='brew cleanup'
+	;;
 esac
 
 ###############
