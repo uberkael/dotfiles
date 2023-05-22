@@ -623,6 +623,9 @@ PATH=/usr/local/bin:$PATH
 # PWD
 PATH=$HOME/bin:$PATH
 PATH=.:$PATH
+#########
+# Tramp #
+#########
 [[ $TERM == "tramp" ]] && unsetopt zle && PS1='$ ' && return
 
 
@@ -639,6 +642,9 @@ PATH=.:$PATH
 ###############
 # WebAssembly #
 ###############
+# [[ "$OSTYPE" == 'linux'* ]] && source "/mnt/Doosan/git/emsdk/emsdk_env.sh"
+
+# Zstyle
 # Colores de ls en autocompletado de archivos
 # disable-fzf-tab
 # zstyle ':completion:*' list-colors '=(#b)(--[^ ])(*)=38;5;220;1=38;5;216'
