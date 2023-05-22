@@ -67,9 +67,15 @@ zinit light-mode for \
 [[ "$OSTYPE" != 'cygwin'* ]] && zinit pack for dircolors-material
 # Load trapd00r/LS_COLORS
 [[ "$OSTYPE" != 'cygwin'* ]] && zinit pack for ls_colors
+
 # Teclas especiales alt flechas home etc
 # bindkey -v
 # zinit load softmoth/zsh-vim-mode
+
+# zsh-z cd z
+zinit load agkozak/zsh-z
+
+# ZMV
 # Permite hacer rename masivo
 autoload zmv
 
