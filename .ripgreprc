@@ -1,0 +1,6 @@
+# Add my 'web' type.
+--type-add
+web:*.{html,css,js}*
+
+# Ignora mayúsculas
+--smart-case
