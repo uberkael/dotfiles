@@ -63,6 +63,10 @@ zinit light-mode for \
 ###########
 # PLUGINS # REF
 ###########
+# Load  zpm-zsh/dircolors-material
+[[ "$OSTYPE" != 'cygwin'* ]] && zinit pack for dircolors-material
+# Load trapd00r/LS_COLORS
+[[ "$OSTYPE" != 'cygwin'* ]] && zinit pack for ls_colors
 # Permite hacer rename masivo
 autoload zmv
 
@@ -312,6 +316,7 @@ zinit light "djui/alias-tips"
 #     atinit'export PYENV_ROOT="$PWD"' atpull"%atclone" \
 #     as'command' pick'bin/pyenv' src"zpyenv.zsh" nocompile'!'
 # zinit light pyenv/pyenv
+
 # Poetry
 zinit ice pick'poetry.zsh'
 zinit light sudosubin/zsh-poetry
@@ -635,6 +640,8 @@ PATH=/usr/local/bin:$PATH
 # PWD
 PATH=$HOME/bin:$PATH
 PATH=.:$PATH
+
+
 #########
 # Tramp #
 #########
@@ -651,6 +658,8 @@ PATH=.:$PATH
 # export PATH=$ANDROID_HOME/platform-tools:$PATH
 # export PATH=$ANDROID_HOME/tools/bin:$PATH
 # export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$PATH
+
+
 ###############
 # WebAssembly #
 ###############
@@ -716,6 +725,7 @@ zstyle ':fzf-tab:*' prefix ''
 # eval "$(pyenv init --path)"
 # eval "$(pyenv init -)"
 # eval "$(pyenv virtualenv-init -)"
+
 
 #############
 # Functions # REF
