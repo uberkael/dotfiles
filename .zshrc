@@ -546,49 +546,51 @@ else
 	alias ls='lsd 2> /dev/null'
 fi
 # alias grep='grep  -rn --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
+# alias docker-compose='sudo docker-compose'
+# alias docker='sudo docker'
 alias chgrp='sudo chgrp -R'
 alias chmod='sudo chmod -R'
 alias chown='sudo chown -R'
 alias cp='cp -R'
-# alias docker-compose='sudo docker-compose'
-# alias docker='sudo docker'
+alias distro='cat /etc/*-release'
 alias dud='du -h * | sort -h'
 alias duf='du -h *|egrep "[.][[:alnum:]]{3,4}$"'
 alias duh='du -h *'
+alias fd="fd -HI"
 alias gcp='dbus-launch gcp -r'
 alias jdk6='export JAVA_HOME=$(/usr/libexec/java_home -v 1.6)'
 alias jdk7='export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)'
 alias jdk8='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)'
+alias man='man -H'
+alias mkdir='mkdir -p'
 alias moon='curl wttr.in/Moon'
+alias myip='curl http://ipecho.net/plain; echo'
+alias ping='grc ping'
+alias ps='grc ps'
+alias rg="rg -S"
 alias rm='rm -rf'
-alias rsync='rsync -havPrz --progress'
-alias rsyncrm='rsync -havPrz --remove-source-files --progress'
+# alias rsync='rsync -havPrz --progress'
+alias rsync='rsync -havPrz --info=progress2'
+# alias rsyncrm='rsync -havPrz --remove-source-files --progress'
+alias rsyncrm='rsync -havPrz --remove-source-files --info=progress2'
 alias scp='scp -r'
+alias screen='screen -x || screen'
 alias ssh='ssh -Y -X'
 alias suroot='sudo -E -s'
 alias testgitlab='ssh -T git@gitlab.ravenpack.com'
 alias tmux='tmux a || tmux'
-alias screen='screen -x || screen'
 alias wea='curl "wttr.in/Sevilla?format=3"'
 alias weareport='curl "v2d.wttr.in/Sevilla"'
 alias weather='curl wttr.in/Sevilla'
-alias ps='grc ps'
-alias ping='grc ping'
-alias myip='curl http://ipecho.net/plain; echo'
-alias distro='cat /etc/*-release'
-alias fd="fd -HI"
+# unalias grc
 
 
-#############
-# Functions #
-#############
-# Take crea y entra a un directorio
-take() {
-	mkdir -p "$1" && cd "$1"
-}
 ##########
 # Config # REF
 ##########
+# Ripgrep
+RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
+
 
 ################
 # Exports LISP # REF
