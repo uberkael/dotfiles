@@ -81,6 +81,7 @@ autoload zmv
 
 # Fast Syntax Highlighting
 zinit load zdharma-continuum/fast-syntax-highlighting
+
 # plugins=(fzf-tab colored-man-pages fzf git history-substring-search sudo zsh-autosuggestions zsh-completions zsh-syntax-highlighting fast-syntax-highlighting)
 
 FZF_BASE=~/software/fzf
@@ -108,6 +109,7 @@ zinit wait lucid for \
 	# OMZP::zsh-syntax-highlighting \
 	# OMZP::zsh-completions \
 	# OMZP::fast-syntax-highlighting \
+
 ############
 # Compinit #
 ############
@@ -176,14 +178,21 @@ zinit light Byron/dua-cli
 # Fzf
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # zinit pack for fzf
-[[ "$OSTYPE" != 'cygwin'* ]] && zinit pack"bgn" for fzf
+[[ "$OSTYPE" != 'cygwin'*  && "$OSTYPE" != 'freebsd'* ]] && zinit pack"bgn-binary" for fzf
+# [[ "$OSTYPE" == 'cygwin'* ]] && zinit pack"bgn" for fzf
 
 # zsh-fzf-history-search
-zinit ice lucid wait'0'
-zinit light joshskidmore/zsh-fzf-history-search
+[[ "$OSTYPE" != 'freebsd'* ]] && zinit ice lucid wait'0'
+[[ "$OSTYPE" != 'freebsd'* ]] && zinit light joshskidmore/zsh-fzf-history-search
 
 # fzf tab
-zinit light Aloxaf/fzf-tab
+[[ "$OSTYPE" != 'freebsd'* ]] && zinit light Aloxaf/fzf-tab
+
+# fzy
+zinit ice as"command" make"\!PREFIX=$ZPFX install" \
+	atclone"cp contrib/fzy-* $ZPFX/bin/" \
+	pick"$ZPFX/bin/fzy*"
+zinit load jhawthorn/fzy
 
 # Grc
 # source /usr/local/etc/grc.zsh
@@ -193,15 +202,6 @@ zinit light Aloxaf/fzf-tab
 # TODO
 [[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh
 
-# fzy
-zinit ice as"command" make"\!PREFIX=$ZPFX install" \
-	atclone"cp contrib/fzy-* $ZPFX/bin/" \
-	pick"$ZPFX/bin/fzy*"
-zinit load jhawthorn/fzy
-
-# Teclas especiales alt flechas home etc
-# bindkey -v
-# zinit load softmoth/zsh-vim-mode
 
 
 
