@@ -256,6 +256,11 @@ zinit light molovo/revolver
 [[ "$OSTYPE" != 'freebsd'* ]] && zinit ice from"gh-r" as"program" mv"hexyl*/hexyl* -> hexyl" #pick"*/hexyl"
 [[ "$OSTYPE" != 'freebsd'* ]] && zinit light "sharkdp/hexyl"
 
+# Grex - Creador de regex
+[[ "$OSTYPE" == 'cygwin'* ]] && zinit ice as"command" from"gh-r" mv"grex* -> grex" pick"pemistahl/grex" bpick"*x86_64*windows*"
+[[ "$OSTYPE" == 'darwin'* ]] && zinit ice as"command" from"gh-r" pick"pemistahl/grex" bpick"*darwin*"
+[[ "$OSTYPE" == 'linux'* ]] && zinit ice as"command" from"gh-r" pick"pemistahl/grex" bpick"*x86_64*linux*"
+zinit light pemistahl/grex
 
 # Proc - Replace for ps
 [[ "$OSTYPE" == 'cygwin'* ]] && zinit ice as"command" from"gh-r" mv"procs* -> procs" bpick"*x86_64*windows*"
@@ -268,6 +273,10 @@ zinit light dalance/procs
 # [[ "$OSTYPE" == 'darwin'* ]] && zinit ice as"command" from"gh-r" mv"sd* -> sd" pick"sd" bpick"*darwin*"
 # [[ "$OSTYPE" == 'linux'* ]] && zinit ice as"command" from"gh-r" mv"sd* -> sd" pick"sd"
 # zinit light chmln/sd
+
+# Dua - Disk Usage Analyzer
+# zinit light Byron/dua-cli
+
 # TLDR-Python - TLDR
 zinit ice as"command" mv"tldr.py -> tldr"
 zinit light tldr-pages/tldr-python-client
@@ -278,6 +287,7 @@ zinit light tldr-pages/tldr-python-client
 # Tealdeer - TLDR
 # https://github.com/tldr-pages/tldr
 # zinit light dbrgn/tealdeer
+
 ##########
 # THEMES # REF
 ##########
