@@ -513,6 +513,14 @@ esac
 ###########
 # Para Man -H
 [ -x "$(command -v google-chrome-stable)" ] && export BROWSER=google-chrome-stable
+
+
+#########
+# RbEnv #
+#########
+[ -x "$(command -v rbenv)" ] && eval "$(rbenv init - zsh)"
+
+
 #########
 # PyEnv # REF
 #########
