@@ -256,6 +256,13 @@ zinit light molovo/revolver
 [[ "$OSTYPE" != 'freebsd'* ]] && zinit ice from"gh-r" as"program" mv"hexyl*/hexyl* -> hexyl" #pick"*/hexyl"
 [[ "$OSTYPE" != 'freebsd'* ]] && zinit light "sharkdp/hexyl"
 
+
+# Proc - Replace for ps
+[[ "$OSTYPE" == 'cygwin'* ]] && zinit ice as"command" from"gh-r" mv"procs* -> procs" bpick"*x86_64*windows*"
+[[ "$OSTYPE" == 'darwin'* ]] && zinit ice as"command" from"gh-r" mv"procs* -> procs" bpick"*mac*"
+[[ "$OSTYPE" == 'linux'* ]] && zinit ice as"command" from"gh-r" mv"procs* -> procs" bpick"*x86_64*linux*"
+zinit light dalance/procs
+
 # SD - Sed remplazo
 # [[ "$OSTYPE" == 'cygwin'* ]] && zinit ice as"command" from"gh-r" mv"sd* -> sd" pick"sd" bpick"*x86_64*windows*"
 # [[ "$OSTYPE" == 'darwin'* ]] && zinit ice as"command" from"gh-r" mv"sd* -> sd" pick"sd" bpick"*darwin*"
