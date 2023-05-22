@@ -149,13 +149,9 @@ zinit light zdharma-continuum/zinit-annex-bin-gem-node
 # Dua - View disk space usage and delete unwanted data, fast.
 zinit light Byron/dua-cli
 
-###########
-# PLUGINS #
-###########
-# Load  zpm-zsh/dircolors-material
-[[ "$OSTYPE" != 'cygwin'* ]] && zinit pack for dircolors-material
-# Load trapd00r/LS_COLORS
-[[ "$OSTYPE" != 'cygwin'* ]] && zinit pack for ls_colors
+# Fd - A simple, fast and user-friendly alternative to find
+[[ "$OSTYPE" != 'freebsd'* ]] && zinit ice from"gh-r" as"program" mv"fd-*/fd -> fd"; zinit  light sharkdp/fd
+
 
 # zinit light trapd00r/LS_COLORS
 
