@@ -79,6 +79,35 @@ zinit load agkozak/zsh-z
 # Permite hacer rename masivo
 autoload zmv
 
+# Fast Syntax Highlighting
+zinit load zdharma-continuum/fast-syntax-highlighting
+# plugins=(fzf-tab colored-man-pages fzf git history-substring-search sudo zsh-autosuggestions zsh-completions zsh-syntax-highlighting fast-syntax-highlighting)
+
+FZF_BASE=~/software/fzf
+
+zinit wait lucid for \
+	OMZL::clipboard.zsh \
+	OMZL::completion.zsh \
+	OMZL::directories.zsh \
+	OMZL::functions.zsh \
+	OMZL::git.zsh \
+	OMZL::grep.zsh \
+	OMZL::history.zsh \
+	OMZL::spectrum.zsh \
+	OMZL::termsupport.zsh \
+	OMZP::colored-man-pages \
+	OMZP::command-not-found \
+	OMZP::fasd \
+	OMZP::sudo \
+	OMZP::systemd \
+	OMZP::web-search/web-search.plugin.zsh \
+	# OMZP::git \
+	# OMZP::pip \
+	# OMZP::fzf
+	# OMZP::screen \
+	# OMZP::zsh-syntax-highlighting \
+	# OMZP::zsh-completions \
+	# OMZP::fast-syntax-highlighting \
 ############
 # Compinit #
 ############
