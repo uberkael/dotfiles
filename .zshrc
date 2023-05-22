@@ -235,6 +235,12 @@ zinit load zdharma-continuum/fast-syntax-highlighting
 [[ "$OSTYPE" == 'linux'* ]] && zinit ice from"gh-r" as"program" bpick"*x86_64*linux*"
 [[ "$OSTYPE" != 'freebsd'* ]] && zinit light denisidoro/navi
 [[ "$OSTYPE" != 'freebsd'* ]] && eval "$(navi widget zsh)"
+# Vivid - Colores
+[[ "$OSTYPE" != 'freebsd'* ]] && zinit ice as"command" from"gh-r" mv"vivid*/vivid -> vivid"
+[[ "$OSTYPE" != 'freebsd'* ]] && zinit light sharkdp/vivid
+[[ "$OSTYPE" != 'freebsd'* ]] && export LS_COLORS="$(vivid generate molokai)"
+#bpick"*-x86_64-unknown-linux-gnu.tar.gz"
+# zinit ice as"command" from"gh-r" mv"*-x86_64-unknown-linux-gnu/vivid -> vivid" bpick"*-x86_64-unknown-linux-gnu.tar.gz" pick"vivid"
 ##########
 # THEMES # REF
 ##########
