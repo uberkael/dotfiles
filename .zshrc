@@ -294,43 +294,20 @@ zinit light tldr-pages/tldr-python-client
 # Spaceship-prompt
 # zinit light denysdovhan/spaceship-prompt
 
-# plugins=(fzf-tab colored-man-pages fzf git history-substring-search sudo zsh-autosuggestions zsh-completions zsh-syntax-highlighting fast-syntax-highlighting)
+# Zinc
+# zinit ice id-as"auto"; zinit light robobenklein/zinc
 
-# zinit wait lucid for \
-# 	OMZL::git.zsh \
-# 	OMZL::clipboard.zsh \
-# 	OMZL::directories.zsh \
-# 	OMZL::grep.zsh \
-# 	OMZL::history.zsh \
-# 	OMZL::spectrum.zsh \
-# 	OMZL::termsupport.zsh \
-# 	OMZL::completion.zsh \
-# 	OMZP::git \
-# 	OMZP::fzf
+# Pure
+# zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'; zinit light sindresorhus/pure
 
-FZF_BASE=~/software/fzf
+# Powerlevel9k
+# zplugin ice from"gh"; zplugin load bhilburn/powerlevel9k
 
-zinit wait lucid for \
-	OMZL::git.zsh \
-	OMZL::clipboard.zsh \
-	OMZL::directories.zsh \
-	OMZL::grep.zsh \
-	OMZL::history.zsh \
-	OMZL::spectrum.zsh \
-	OMZL::termsupport.zsh \
-	OMZL::completion.zsh \
-	OMZP::git \
-	OMZP::colored-man-pages \
-	OMZP::sudo \
-	OMZP::systemd \
-	OMZP::fasd \
-	OMZP::command-not-found
-	# OMZP::pip \
-	# OMZP::fzf
-	# OMZP::screen \
-	# OMZP::zsh-syntax-highlighting \
-	# OMZP::zsh-completions \
-	# OMZP::fast-syntax-highlighting \
+# P10k
+zinit ice depth=1;
+zinit light romkatv/powerlevel10k
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 ############
 # Keybinds # REF
@@ -411,12 +388,19 @@ zinit ice wait'0' lucid; zinit light sainnhe/zsh-completions
 
 # Fish man
 # load module for list-style selection
-# zmodload zsh/complist
-# setopt menucomplete
-# zstyle ':completion:*' menu select=0 search
-# zstyle ':completion:*:manuals'    separate-sections true
-# zstyle ':completion:*:manuals.*'  insert-sections   true
-# zstyle ':completion:*:man:*'      menu yes select
+zmodload zsh/complist
+setopt menucomplete
+# Alternative
+zstyle ':completion:*' menu select=0 search
+zstyle ':completion:*:manuals'    separate-sections true
+zstyle ':completion:*:manuals.*'  insert-sections   true
+zstyle ':completion:*:man:*'      menu yes select
+# Alternative
+# zstyle ':completion:*' menu yes select
+# bindkey -M menuselect '?' history-incremental-search-forward
+
+# Completa conmandos con sudo
+zstyle ':completion::complete:*' gain-privileges 1
 
 # Genera autocompletado con manpages
 # gencomp fzf --man
