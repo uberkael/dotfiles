@@ -223,8 +223,6 @@ zinit load jhawthorn/fzy
 # zinit ice as"command" #mv"tldr.py -> tldr"
 # zinit load dylanaraps/neofetch
 
-# Fast Syntax Highlighting
-zinit load zdharma-continuum/fast-syntax-highlighting
 # Navi - Terminal Sheets
 # [[ "$OSTYPE" == 'darwin'* ]] && zinit ice from"gh-r" as"program" bpick"*x86_64*darwin*"
 # [[ "$OSTYPE" == 'cygwin*'* ]] && zinit ice from"gh-r" as"program" bpick"*windows*"
@@ -235,15 +233,28 @@ zinit load zdharma-continuum/fast-syntax-highlighting
 [[ "$OSTYPE" == 'linux'* ]] && zinit ice from"gh-r" as"program" bpick"*x86_64*linux*"
 [[ "$OSTYPE" != 'freebsd'* ]] && zinit light denisidoro/navi
 [[ "$OSTYPE" != 'freebsd'* ]] && eval "$(navi widget zsh)"
+
+# Emoji-CLI
+# zinit light wfxr/emoji-cli
+# zinit light b4b4r07/emoji-cli
+
+# Prettyping
+# zinit light denilsonsa/prettyping
+
 # Vivid - Colores
 [[ "$OSTYPE" != 'freebsd'* ]] && zinit ice as"command" from"gh-r" mv"vivid*/vivid -> vivid"
 [[ "$OSTYPE" != 'freebsd'* ]] && zinit light sharkdp/vivid
 [[ "$OSTYPE" != 'freebsd'* ]] && export LS_COLORS="$(vivid generate molokai)"
 #bpick"*-x86_64-unknown-linux-gnu.tar.gz"
 # zinit ice as"command" from"gh-r" mv"*-x86_64-unknown-linux-gnu/vivid -> vivid" bpick"*-x86_64-unknown-linux-gnu.tar.gz" pick"vivid"
+
 # Revolver - Loading
 zinit ice wait"2" lucid as"program" pick"revolver"
 zinit light molovo/revolver
+
+# Hexyl - Editor Hexadecimal
+[[ "$OSTYPE" != 'freebsd'* ]] && zinit ice from"gh-r" as"program" mv"hexyl*/hexyl* -> hexyl" #pick"*/hexyl"
+[[ "$OSTYPE" != 'freebsd'* ]] && zinit light "sharkdp/hexyl"
 ##########
 # THEMES # REF
 ##########
