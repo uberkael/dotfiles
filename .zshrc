@@ -631,6 +631,13 @@ PATH=.:$PATH
 ###########
 # Android #
 ###########
+# Poner en /etc/profile
+# export ANDROID_HOME=$HOME/Android/Sdk
+# export ANDROID_SDK_ROOT=$ANDROID_HOME
+# export PATH=$ANDROID_HOME/emulator:$PATH
+# export PATH=$ANDROID_HOME/platform-tools:$PATH
+# export PATH=$ANDROID_HOME/tools/bin:$PATH
+# export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$PATH
 ###############
 # WebAssembly #
 ###############
