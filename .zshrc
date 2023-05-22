@@ -81,11 +81,6 @@ autoload zmv
 
 zicompinit # equals to autoload compinit; compinit
 
-##########
-# THEMES #
-##########
-# Spaceship-prompt
-# zinit light denysdovhan/spaceship-prompt
 ####################
 # Install programs # REF
 ####################
@@ -168,6 +163,8 @@ zinit load zdharma-continuum/fast-syntax-highlighting
 ##########
 # THEMES # REF
 ##########
+# Spaceship-prompt
+# zinit light denysdovhan/spaceship-prompt
 
 # plugins=(fzf-tab colored-man-pages fzf git history-substring-search sudo zsh-autosuggestions zsh-completions zsh-syntax-highlighting fast-syntax-highlighting)
 
