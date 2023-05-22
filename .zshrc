@@ -202,7 +202,22 @@ zinit load jhawthorn/fzy
 # TODO
 [[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh
 
+# Crasis - GUI para Zinit
+# zinit light zdharma/zui
+# zinit light zdharma/zinit-crasis
 
+# Zoxide - Sustituto cd z
+# [[ "$OSTYPE" == 'cygwin'* ]] && zinit ice from"gh-r" as"program" bpick"*windows*"
+# [[ "$OSTYPE" == 'darwin'* ]] && zinit ice from"gh-r" as"program" bpick"*darwin*"
+# [[ "$OSTYPE" == 'linux'* ]] && zinit ice from"gh-r" as"program" bpick"*linux*"
+# zinit light ajeetdsouza/zoxide
+# eval "$(zoxide init zsh)"
+
+# zinit ice wait"2" as"command" from"gh-r" lucid \
+#   mv"zoxide*/zoxide -> zoxide" \
+#   atclone"./zoxide init zsh > init.zsh" \
+#   atpull"%atclone" src"init.zsh" nocompile'!'
+# zinit light ajeetdsouza/zoxide
 
 
 # Fast Syntax Highlighting
