@@ -219,6 +219,9 @@ zinit load jhawthorn/fzy
 #   atpull"%atclone" src"init.zsh" nocompile'!'
 # zinit light ajeetdsouza/zoxide
 
+# Neofetch - Informacion
+# zinit ice as"command" #mv"tldr.py -> tldr"
+# zinit load dylanaraps/neofetch
 
 # Fast Syntax Highlighting
 zinit load zdharma-continuum/fast-syntax-highlighting
