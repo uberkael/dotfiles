@@ -160,6 +160,10 @@ zinit light Byron/dua-cli
 # Toca las pelotas con curl!
 # zinit load wfxr/forgit
 
+# Hyperfine - Benchmarks de shell
+[[ "$OSTYPE" != 'freebsd'* ]] && zinit ice as"command" from"gh-r" mv"hyperfine*/hyperfine -> hyperfine" pick"sharkdp/hyperfine"
+[[ "$OSTYPE" != 'freebsd'* ]] && zinit light sharkdp/hyperfine
+
 # fzf
 # zinit ice wait lucid
 # zinit snippet OMZ::plugins/fzf/fzf.plugin.zsh
