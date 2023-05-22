@@ -241,6 +241,9 @@ zinit load zdharma-continuum/fast-syntax-highlighting
 [[ "$OSTYPE" != 'freebsd'* ]] && export LS_COLORS="$(vivid generate molokai)"
 #bpick"*-x86_64-unknown-linux-gnu.tar.gz"
 # zinit ice as"command" from"gh-r" mv"*-x86_64-unknown-linux-gnu/vivid -> vivid" bpick"*-x86_64-unknown-linux-gnu.tar.gz" pick"vivid"
+# Revolver - Loading
+zinit ice wait"2" lucid as"program" pick"revolver"
+zinit light molovo/revolver
 ##########
 # THEMES # REF
 ##########
