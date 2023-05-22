@@ -533,6 +533,17 @@ then
 	[[ "$OSTYPE" != 'freebsd'* ]] && eval "$(pyenv virtualenv-init -)"
 	# source /home/kael/.zinit/plugins/pyenv/completions/pyenv.zsh
 fi
+
+
+#######
+# NVM #
+#######
+# [[ "$OSTYPE" == 'cygwin'* ]]
+# [[ "$OSTYPE" == 'darwin'* ]]
+[[ "$OSTYPE" == 'linux'* ]] && NVM_FILE="/usr/share/nvm/init-nvm.sh"
+[ -f "$NVM_FILE" ] && source $NVM_FILE
+
+
 ###############
 # Alias Comun # REF
 ###############
