@@ -521,6 +521,17 @@ case "$OSTYPE" in
 	;;
 esac
 
+##########
+# Editor #
+##########
+[ -n "$DISPLAY" ] && export EDITOR=code || export EDITOR=emacs
+
+
+###########
+# Browser #
+###########
+# Para Man -H
+[ -x "$(command -v google-chrome-stable)" ] && export BROWSER=google-chrome-stable
 ###############
 # Alias Comun # REF
 ###############
