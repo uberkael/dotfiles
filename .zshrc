@@ -255,6 +255,12 @@ zinit light molovo/revolver
 # Hexyl - Editor Hexadecimal
 [[ "$OSTYPE" != 'freebsd'* ]] && zinit ice from"gh-r" as"program" mv"hexyl*/hexyl* -> hexyl" #pick"*/hexyl"
 [[ "$OSTYPE" != 'freebsd'* ]] && zinit light "sharkdp/hexyl"
+
+# SD - Sed remplazo
+# [[ "$OSTYPE" == 'cygwin'* ]] && zinit ice as"command" from"gh-r" mv"sd* -> sd" pick"sd" bpick"*x86_64*windows*"
+# [[ "$OSTYPE" == 'darwin'* ]] && zinit ice as"command" from"gh-r" mv"sd* -> sd" pick"sd" bpick"*darwin*"
+# [[ "$OSTYPE" == 'linux'* ]] && zinit ice as"command" from"gh-r" mv"sd* -> sd" pick"sd"
+# zinit light chmln/sd
 # TLDR-Python - TLDR
 zinit ice as"command" mv"tldr.py -> tldr"
 zinit light tldr-pages/tldr-python-client
