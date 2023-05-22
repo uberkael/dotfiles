@@ -702,6 +702,12 @@ zstyle ':fzf-tab:*' prefix ''
 #############
 # Functions # REF
 #############
+# Take crea y entra a un directorio
+take() {
+	mkdir -p "$1" && cd "$1"
+}
+
+# Go To Every
 ## use rg to get file list
 export FZF_DEFAULT_COMMAND='rg --files --hidden'
 
@@ -756,4 +762,9 @@ env-load() {
 # Docker ips
 docker-ips() {
 	docker inspect --format='{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq)
+}
+
+# Don't add failed commands to history
+zshaddhistory() {
+	whence ${${(z)1}[1]} >| /dev/null || return 1
 }
