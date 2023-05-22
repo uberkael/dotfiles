@@ -605,9 +605,24 @@ export LD_LIBRARY_PATH=$ORACLE_HOME:/usr/lib/x86_64-linux-gnu
 export TNS_ADMIN=$RP_REPOS/configuration
 export IFILE=$TNS_ADMIN/tnsnames.ora
 
-# PATH=.:$HOME/bin:$HOME/.local/bin:/usr/local/bin:/opt/X11/bin:/usr/local/sbin:$PATH
-PATH=.:$HOME/bin:$HOME/.cargo/bin:/usr/local/bin:/opt/X11/bin:/usr/local/sbin:$PATH
 
+########
+# PATH # REF
+########
+# PATH=.:$HOME/bin:$HOME/.cargo/bin:/usr/local/bin:/opt/X11/bin:/usr/local/sbin:$PATH
+# Qt
+[[ -d "$HOME/Qt/6.4.2/gcc_64" ]] && PATH=$HOME/Qt/6.4.2/gcc_64/bin:$PATH
+# Cargo Rust
+PATH=$HOME/.cargo/bin:$PATH
+# /opt/X11
+PATH=/opt/X11/bin:$PATH
+# /usr/local/sbin
+PATH=/usr/local/sbin:$PATH
+# /usr/local/bin
+PATH=/usr/local/bin:$PATH
+# PWD
+PATH=$HOME/bin:$PATH
+PATH=.:$PATH
 [[ $TERM == "tramp" ]] && unsetopt zle && PS1='$ ' && return
 
 ##########
