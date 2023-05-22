@@ -478,9 +478,13 @@ case "$OSTYPE" in
 	fi
 	;;
 	cygwin*)
+	####################
+	# Windows Terminal #
+	####################
 	# PATH=/cygdrive/c/Portable/Python/:$PATH
 	GRCPATH="/usr/local/bin/grc"
 	GRCPATHZSH="/etc/grc.zsh"
+	alias open="explorer"
 	alias ls='ls --color'
 	alias netstat='grc netstat'
 	alias ping='grc ping'
