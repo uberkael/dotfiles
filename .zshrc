@@ -225,6 +225,16 @@ zinit load jhawthorn/fzy
 
 # Fast Syntax Highlighting
 zinit load zdharma-continuum/fast-syntax-highlighting
+# Navi - Terminal Sheets
+# [[ "$OSTYPE" == 'darwin'* ]] && zinit ice from"gh-r" as"program" bpick"*x86_64*darwin*"
+# [[ "$OSTYPE" == 'cygwin*'* ]] && zinit ice from"gh-r" as"program" bpick"*windows*"
+# [[ "$OSTYPE" == 'linux*'* ]] && zinit ice from"gh-r" as"program" bpick"*x86_64*linux*"
+# zinit ice from"gh-r" as"program" bpick"*windows*"
+[[ "$OSTYPE" == 'cygwin'* ]] && zinit ice from"gh-r" as"program" bpick"*x86_64*windows*"
+[[ "$OSTYPE" == 'darwin'* ]] && zinit ice from"gh-r" as"program" bpick"*darwin*"
+[[ "$OSTYPE" == 'linux'* ]] && zinit ice from"gh-r" as"program" bpick"*x86_64*linux*"
+[[ "$OSTYPE" != 'freebsd'* ]] && zinit light denisidoro/navi
+[[ "$OSTYPE" != 'freebsd'* ]] && eval "$(navi widget zsh)"
 ##########
 # THEMES # REF
 ##########
