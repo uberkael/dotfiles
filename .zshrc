@@ -60,28 +60,6 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
-####################
-# Install programs #
-####################
-# ara usar bgn
-zinit light zdharma-continuum/zinit-annex-bin-gem-node
-# zinit light zdharma-continuum/zinit-annex-readurl
-# for id ( ogham/exa sharkdp/{fd,bat} ) {
-# 	 zinit from"gh-r" as"program" for @$id
-# }
-# A cat clone with syntax highlighting and Git integration.
-zinit ice from"gh-r" as"program" mv"bat-*/bat -> bat"; zinit light sharkdp/bat
-# A viewer for git and diff output
-zinit ice from"gh-r" as"program" mv"delta-*/delta -> delta"; zinit light dandavison/delta
-# A more intuitive version of du written in rust.
-zinit ice from"gh-r" as"program" mv"dust-*/dust -> dust"; zinit light bootandy/dust
-# A simple, fast and user-friendly alternative to find
-zinit ice from"gh-r" as"program" mv"fd-*/fd -> fd"; zinit light sharkdp/fd
-# An extremely fast alternative to grep that respects your gitignore
-zinit ice from"gh-r" as"program" mv"ripgrep-*/rg -> rg"; zinit light BurntSushi/ripgrep
-#######
-# ZMV #
-#######
 ###########
 # PLUGINS # REF
 ###########
@@ -111,21 +89,28 @@ zicompinit # equals to autoload compinit; compinit
 ####################
 # Install programs # REF
 ####################
+# Para usar bgn
+zinit light zdharma-continuum/zinit-annex-bin-gem-node
+# zinit light zdharma-continuum/zinit-annex-readurl
+# for id ( ogham/exa sharkdp/{fd,bat} ) {
+# 	 zinit from"gh-r" as"program" for @$id
+# }
+# zinit ice as"command" from"gh-r" bpick"exa-linux-x86_64-musl-*" pick"bin/exa"
+# zinit light ogham/exa
 
-# Zinc
-# zinit ice id-as"auto"; zinit light robobenklein/zinc
+# Bat - A cat clone with syntax highlighting and Git integration.
+[[ "$OSTYPE" != 'freebsd'* ]] && zinit ice from"gh-r" as"program" mv"bat-*/bat -> bat"; zinit light sharkdp/bat
 
-# Pure
-# zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'; zinit light sindresorhus/pure
+# Delta - A viewer for git and diff output
+[[ "$OSTYPE" != 'freebsd'* ]] && zinit ice from"gh-r" as"program" mv"delta-*/delta -> delta"
+[[ "$OSTYPE" != 'freebsd'* ]] && zinit light dandavison/delta
 
-# Powerlevel9k
-# zplugin ice from"gh"; zplugin load bhilburn/powerlevel9k
+# Dust - A more intuitive version of du written in rust.
+[[ "$OSTYPE" != 'freebsd'* ]] && zinit ice from"gh-r" as"program" mv"dust-*/dust -> dust"
+[[ "$OSTYPE" != 'freebsd'* ]] && zinit light bootandy/dust
 
-# P10k
-zinit ice depth=1;
-zinit light romkatv/powerlevel10k
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# Dua - View disk space usage and delete unwanted data, fast.
+zinit light Byron/dua-cli
 
 ###########
 # PLUGINS #
