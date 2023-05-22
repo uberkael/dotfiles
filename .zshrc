@@ -308,6 +308,10 @@ zinit light "djui/alias-tips"
 # zinit pack for pyenv
 # [[ "$OSTYPE" != 'cygwin'* ]] && zinit pack"bgn" for pyenv
 
+# zinit ice atclone'PYENV_ROOT="$PWD" ./libexec/pyenv init - > zpyenv.zsh' \
+#     atinit'export PYENV_ROOT="$PWD"' atpull"%atclone" \
+#     as'command' pick'bin/pyenv' src"zpyenv.zsh" nocompile'!'
+# zinit light pyenv/pyenv
 # Poetry
 zinit ice pick'poetry.zsh'
 zinit light sudosubin/zsh-poetry
@@ -393,18 +397,6 @@ case "$OSTYPE" in
 		}
 		alias systemctl='sudo systemctl'
 	fi
-	# #########
-	# # PyEnv #
-	# #########
-	export PYENV_ROOT="$HOME/.pyenv"
-	if [ -x "$(command -v pyenv)" ];
-	then
-		export PATH="$PYENV_ROOT/bin:$PATH"
-		eval "$(pyenv init --path)"
-		eval "$(pyenv init -)"
-		eval "$(pyenv virtualenv-init -)"
-		source /home/kael/.zinit/plugins/pyenv/completions/pyenv.zsh
-	fi
 	;;
 	darwin*)
 	# Brew plugins
@@ -447,17 +439,6 @@ case "$OSTYPE" in
 	alias ainfo='brew info'
 	alias aup='brew update -v;brew upgrade -v;brew cu -vfacy'
 	alias aclean='brew cleanup'
-	# #########
-	# # PyEnv #
-	# #########
-	export PYENV_ROOT="$HOME/.pyenv"
-	if [ -x "$(command -v pyenv)" ];
-	then
-		export PATH="$PYENV_ROOT/bin:$PATH"
-		eval "$(pyenv init --path)"
-		eval "$(pyenv init -)"
-		eval "$(pyenv virtualenv-init -)"
-	fi
 	;;
 	cygwin*)
 	####################
@@ -532,6 +513,18 @@ esac
 ###########
 # Para Man -H
 [ -x "$(command -v google-chrome-stable)" ] && export BROWSER=google-chrome-stable
+#########
+# PyEnv # REF
+#########
+if [ -x "$(command -v pyenv)" ];
+then
+	export PYENV_ROOT="$HOME/.pyenv"
+	export PATH="$PYENV_ROOT/bin:$PATH"
+	eval "$(pyenv init --path)"
+	eval "$(pyenv init -)"
+	[[ "$OSTYPE" != 'freebsd'* ]] && eval "$(pyenv virtualenv-init -)"
+	# source /home/kael/.zinit/plugins/pyenv/completions/pyenv.zsh
+fi
 ###############
 # Alias Comun # REF
 ###############
