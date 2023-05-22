@@ -152,8 +152,13 @@ zinit light Byron/dua-cli
 # Fd - A simple, fast and user-friendly alternative to find
 [[ "$OSTYPE" != 'freebsd'* ]] && zinit ice from"gh-r" as"program" mv"fd-*/fd -> fd"; zinit  light sharkdp/fd
 
+# Ripgrep - An extremely fast alternative to grep that respects your gitignore
+[[ "$OSTYPE" != 'freebsd'* ]] && zinit ice from"gh-r" as"program" mv"ripgrep-*/rg -> rg"
+[[ "$OSTYPE" != 'freebsd'* ]] && zinit light BurntSushi/ripgrep
 
-# zinit light trapd00r/LS_COLORS
+# Forgit - Comandos interactivos de git
+# Toca las pelotas con curl!
+# zinit load wfxr/forgit
 
 # fzf
 # zinit ice wait lucid
