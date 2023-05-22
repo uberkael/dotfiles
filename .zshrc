@@ -1,8 +1,7 @@
 # Start profiling zshrc
 # zmodload zsh/zprof
-
 ################
-# ZSH Settings #
+# ZSH Settings # REF
 ################
 # No necesita cd
 setopt autocd
@@ -83,6 +82,9 @@ zinit ice from"gh-r" as"program" mv"ripgrep-*/rg -> rg"; zinit light BurntSushi/
 #######
 # ZMV #
 #######
+###########
+# PLUGINS # REF
+###########
 # Permite hacer rename masivo
 autoload zmv
 
@@ -106,6 +108,9 @@ zicompinit # equals to autoload compinit; compinit
 ##########
 # Spaceship-prompt
 # zinit light denysdovhan/spaceship-prompt
+####################
+# Install programs # REF
+####################
 
 # Zinc
 # zinit ice id-as"auto"; zinit light robobenklein/zinc
@@ -175,6 +180,9 @@ zinit load jhawthorn/fzy
 
 # Fast Syntax Highlighting
 zinit load zdharma-continuum/fast-syntax-highlighting
+##########
+# THEMES # REF
+##########
 
 # plugins=(fzf-tab colored-man-pages fzf git history-substring-search sudo zsh-autosuggestions zsh-completions zsh-syntax-highlighting fast-syntax-highlighting)
 
@@ -214,6 +222,9 @@ zinit wait lucid for \
 	# OMZP::zsh-completions \
 	# OMZP::fast-syntax-highlighting \
 
+############
+# Keybinds # REF
+############
 # Buscar teclas
 # showkey -a
 # Lista de comandos
@@ -274,6 +285,9 @@ bindkey '^L' clear-scrollback-buffer
 bindkey '^H' backward-kill-word # Ctrl
 bindkey '^[[3;3~' kill-line # Alt
 
+###################
+# Auto Completion # REF
+###################
 # zinit light zsh-users/zsh-autosuggestions
 zinit load zsh-users/zsh-autosuggestions
 # ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
@@ -305,6 +319,9 @@ zinit ice wait'0' lucid; zinit light sainnhe/zsh-completions
 # alias reminders
 zinit light "djui/alias-tips"
 
+##########
+# Python # REF
+##########
 # Pyenv (descomentar -solo una-  y comentar si hay problemas)
 # zinit pack for pyenv
 # [[ "$OSTYPE" != 'cygwin'* ]] && zinit pack"bgn" for pyenv
@@ -334,7 +351,7 @@ if [ $TERM = "xterm-256color" ]; then
 fi
 
 ######
-# OS #
+# OS # REF
 ######
 case "$OSTYPE" in
 	linux*)
@@ -481,7 +498,7 @@ case "$OSTYPE" in
 esac
 
 ###############
-# Alias Comun #
+# Alias Comun # REF
 ###############
 if ! command -v lsd &> /dev/null; then
 	alias l='ls -CF'
@@ -534,10 +551,13 @@ alias fd="fd -HI"
 take() {
 	mkdir -p "$1" && cd "$1"
 }
+##########
+# Config # REF
+##########
 
-#####################
-# Exports Ravenpack #
-#####################
+################
+# Exports LISP # REF
+################
 export RP_REPOS=$HOME/git
 #export RP_REPOS=/mnt/ram/git
 export PATH=$PATH:/opt/acl10.1-smp.64
@@ -556,6 +576,12 @@ PATH=.:$HOME/bin:$HOME/.cargo/bin:/usr/local/bin:/opt/X11/bin:/usr/local/sbin:$P
 ##########
 # Zstyle #
 ##########
+###########
+# Android #
+###########
+###############
+# WebAssembly #
+###############
 # Colores de ls en autocompletado de archivos
 # disable-fzf-tab
 # zstyle ':completion:*' list-colors '=(#b)(--[^ ])(*)=38;5;220;1=38;5;216'
@@ -567,15 +593,11 @@ PATH=.:$HOME/bin:$HOME/.cargo/bin:/usr/local/bin:/opt/X11/bin:/usr/local/sbin:$P
 # zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
 # zstyle ':completion:*' matcher-list 'r:|?=**'
 
-#######
-# fzf #
-#######
+# fzf
 # export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 export FZF_DEFAULT_OPTS='--layout=reverse --border'
 
-###########
-# fzf tab #
-###########
+# fzf tab
 # disable sort when completing `git checkout`
 zstyle ':completion:*:git-checkout:*' sort false
 # set descriptions format to enable group support
@@ -623,6 +645,9 @@ zstyle ':fzf-tab:*' prefix ''
 ###############
 # Go To Every #
 ###############
+#############
+# Functions # REF
+#############
 ## use rg to get file list
 export FZF_DEFAULT_COMMAND='rg --files --hidden'
 
